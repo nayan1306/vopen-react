@@ -1,0 +1,53 @@
+/* Basic styling for the menu */
+.menu {
+    margin: 10px;
+  }
+  
+  .menu label {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .menu select {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  
+  /* Map styling */
+  #map {
+    width: 1000px;
+    height: 500px;
+    background: #eee;
+    border: 1px solid #c6bebe;
+    margin-top: 10px;
+  }
+  
+  /* Modal styling */
+  .my-modal {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: 35%;
+    margin-left: 10px;
+    position: fixed;
+    bottom: 10px;
+    z-index: 5;
+    width: 95%;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #2616b8;
+  }
+  
+  #loading-chart {
+    display: block;
+    text-align: center;
+  }
+  

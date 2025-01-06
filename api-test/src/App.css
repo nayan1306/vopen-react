@@ -1,0 +1,166 @@
+/* Basic layout styling */
+.app {
+  display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #042c45;
+  color: white;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #f1f1f1;
+}
+
+/* Styling for the list */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  background-color: #06456f; /* Tile effect background */
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.sidebar ul li:hover {
+  background-color: #05596b; /* Hover effect background color */
+  transform: translateX(5px); /* Slight movement effect */
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+  font-weight: bold; /* Bold text on hover */
+  color: #e1f5fe; /* Slight change in color on hover */
+}
+
+/* Content section */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #e5e5e5;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Light inner shadow */
+}
+
+h1 {
+  color: #333;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* Optional - adding a subtle gradient background to the sidebar */
+.sidebar {
+  background: linear-gradient(135deg, #042c45 0%, #06456f 100%);
+}
+
+
+/* menu css */
+
+/* Menu container styling */
+.menu {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  /* display: flex; */
+  align-items: center;
+  /* justify-content: space-evenly; */
+  gap: 15px;
+  flex-wrap: wrap;  /* Allows wrapping to a new line if space is tight */
+}
+
+/* Label styling */
+.menu label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+/* Select dropdown styling */
+.menu select {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: 120px; /* Set a fixed width for consistency */
+  margin-right: 50px;
+}
+
+.menu select:focus {
+  outline: none;
+  border-color: #3f9cc5;
+  box-shadow: 0 0 5px rgba(63, 156, 197, 0.5); /* Focused state shadow */
+  background-color: #f0f8ff; /* Light blue on focus */
+}
+
+/* Hover effect for the dropdown */
+.menu select:hover {
+  background-color: #e9f2f7;
+  border-color: #3f9cc5;
+}
+
+/* Make menu more compact by reducing space between elements */
+.menu select {
+  margin-left: 10px;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu select {
+    width: 100%;  /* Take full width on smaller screens */
+    margin-left: 0;  /* Remove left margin for better spacing */
+  }
+}
+
+/* Map container styling */
+#map {
+  height: 800px;
+  width: 1000px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
