@@ -14,7 +14,7 @@ const LocationNdvi = () => {
   const [toTime, setToTime] = useState("");
   const [chart, setChart] = useState(null); // Highcharts chart reference
   const [loadingChart, setLoadingChart] = useState(false); // Loading state for chart
-  const apiKey = "O6VVexshWMmZ5ajIS2U42g"; // Your API key
+  const apiKey = import.meta.env.VITE_API_KEY;// Your API key
   const [datesArray, setDatesArray] = useState([]); // Store dates for dropdown
 
   // Fetch timestamps for dropdowns
