@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import MapComponent from './components/MapComponent'; // Existing Map Component
-// import DocumentationPage from './components/DocumentationPage'; // Create this page
+import MapComponent from './components/MapComponent'; 
 import './App.css'; // Make sure you have your styles
 import LocationNdvi from './components/LocationNdvi';
 import PolygonNdvi from './components/PolygonNdvi';
+
 
 function App() {
   return (
