@@ -6,6 +6,8 @@ import ImageLayer from "ol/layer/Image";
 import ImageWMS from "ol/source/ImageWMS";
 import { buildVAPILayer, getVAPIChartData, processChartData, getTimestamp } from "../../public/js/lib/vapi-0.3"; // Update the path if needed
 import Highcharts from "highcharts";
+import ReactMarkdown from "react-markdown"; // Import react-markdown
+import locationmarkdown from './locationmarkdown.md?raw';
 
 const LocationNdvi = () => {
   const [map, setMap] = useState(null);
@@ -182,6 +184,9 @@ const LocationNdvi = () => {
       </div>
 
       <div id="map" className="map"></div>
+      <div className="markdown-content">
+              <ReactMarkdown>{locationmarkdown}</ReactMarkdown>
+            </div>
 
       <div id="myModal" className="my-modal">
         <span className="close-button" onClick={closeModal}>

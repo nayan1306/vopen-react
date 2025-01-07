@@ -1,19 +1,26 @@
 /* Basic layout styling */
 .app {
   display: flex;
+  height: 100vh;
+  overflow: hidden; /* Ensures no extra space for the body */
 }
 
 /* Sidebar styling */
 .sidebar {
+  position: fixed; /* Makes the sidebar fixed */
+  top: 0;
+  left: 0;
   width: 300px;
   padding: 20px;
-  background-color: #042c45;
+  background: linear-gradient(135deg, #042c45 0%, #06456f 100%); /* Gradient background */
   color: white;
   height: 100vh;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  z-index: 1000; /* Ensures it stays on top */
+  overflow-y: auto;
 }
 
 .sidebar h2 {
@@ -65,38 +72,34 @@
 
 /* Content section */
 .content {
-  flex-grow: 1;
+  margin-left: 350px; /* Adjusted to accommodate the sidebar */
   padding: 20px;
   background-color: #e5e5e5;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Light inner shadow */
+  height: 100vh;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  flex-grow: 1;
 }
 
-h1 {
-  color: #333;
-  font-size: 32px;
-  font-weight: 600;
+/* Map container styling */
+#map {
+  height: 800px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional - adding a subtle gradient background to the sidebar */
-.sidebar {
-  background: linear-gradient(135deg, #042c45 0%, #06456f 100%);
-}
-
-
-/* menu css */
-
-/* Menu container styling */
+/* Menu css */
 .menu {
   background: #ffffff;
   padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  /* display: flex; */
+  display: flex;
   align-items: center;
-  /* justify-content: space-evenly; */
   gap: 15px;
-  flex-wrap: wrap;  /* Allows wrapping to a new line if space is tight */
+  flex-wrap: wrap;
 }
 
 /* Label styling */
@@ -141,17 +144,42 @@ h1 {
 }
 
 /* Responsive design for small screens */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .content {
+    margin-left: 250px;
+  }
+
+  .menu select {
+    width: 100%; /* Take full width on smaller screens */
+    margin-left: 0; /* Remove left margin for better spacing */
+  }
+}
+
 @media (max-width: 600px) {
+  .sidebar {
+    width: 200px; /* Sidebar width adjustment for smaller screens */
+  }
+
+  .content {
+    margin-left: 200px;
+  }
+
   .menu {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .menu select {
-    width: 100%;  /* Take full width on smaller screens */
-    margin-left: 0;  /* Remove left margin for better spacing */
+    width: 100%; /* Full width on smaller screens */
+    margin-left: 0;
   }
 }
+
+
 
 /* Map container styling */
 #map {
@@ -163,4 +191,163 @@ h1 {
 }
 
 
+/* Markdown content container */
+.markdown-content {
+  
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for readability */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  font-family: 'Roboto', sans-serif; /* Clean, modern font */
+}
+
+/* Headings */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-family: 'Merriweather', serif; /* Elegant serif for headings */
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333; /* Dark text for emphasis */
+  line-height: 1.4;
+}
+
+/* Paragraphs */
+.markdown-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555; /* Soft gray for text */
+  margin-bottom: 15px;
+  text-align: justify; /* Justify text for a cleaner look */
+}
+
+/* Links */
+.markdown-content a {
+  color: #007BFF; /* Bright blue for links */
+  text-decoration: none;
+  border-bottom: 1px solid #007BFF;
+  transition: all 0.3s ease-in-out;
+}
+
+.markdown-content a:hover {
+  color: #0056b3; /* Darker blue on hover */
+  border-bottom: 1px solid #0056b3;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.markdown-content li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Code blocks */
+.markdown-content pre {
+  background-color: #c0c0c053; /* Dark background for code */
+  color: #000000; /* Light text for code */
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  white-space: pre-wrap; /* Wrap long lines */
+}
+
+/* Inline code */
+.markdown-content code {
+  background-color: #ffffff;
+  color: #c7254e;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  background-color: #f2f2f2;
+  border-left: 5px solid #007BFF;
+  padding: 15px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Images */
+.markdown-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tables */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.markdown-content th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.markdown-content td {
+  color: #555;
+}
+
+/* Code syntax highlighting (optional) */
+.markdown-content .language-javascript {
+  color: #00919b; /* JavaScript */
+}
+
+.markdown-content .language-python {
+  color: #3572A5; /* Python */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .markdown-content {
+    padding: 15px;
+  }
+
+  .markdown-content h1 {
+    font-size: 24px;
+  }
+
+  .markdown-content p {
+    font-size: 14px;
+  }
+
+  .markdown-content code {
+    font-size: 14px;
+  }
+
+  .markdown-content pre {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
 

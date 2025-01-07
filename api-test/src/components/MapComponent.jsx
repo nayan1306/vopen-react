@@ -5,6 +5,9 @@ import { Map, View } from "ol";
 import ImageLayer from "ol/layer/Image";
 import ImageWMS from "ol/source/ImageWMS";
 import { getTimestamp, buildVAPILayer } from "../../public/js/lib/vapi-0.3";
+import ReactMarkdown from "react-markdown"; // Import react-markdown
+import mapmarkdown from './mapmarkdown.md?raw'; 
+
 
 const MapComponent = () => {
   const [map, setMap] = useState(null);
@@ -13,7 +16,7 @@ const MapComponent = () => {
   const [fromTime, setFromTime] = useState("");
   const [toTime, setToTime] = useState("");
   const [datesArray, setDatesArray] = useState([]);
-  const apiKey = "O6VVexshWMmZ5ajIS2U42g";
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   
 
@@ -110,6 +113,10 @@ const MapComponent = () => {
       </div>
 
       <div id="map" className="map"></div>
+
+      <div className="markdown-content">
+        <ReactMarkdown>{mapmarkdown}</ReactMarkdown>
+      </div>
     </div>
   );
 };

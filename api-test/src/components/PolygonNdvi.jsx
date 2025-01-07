@@ -12,6 +12,9 @@ import VectorSource from "ol/source/Vector"; // Source for vector layer
 import { Style, Stroke, Fill } from "ol/style"; // For styling polygons
 import { GeoJSON } from "ol/format"; // For GeoJSON formatting
 
+import ReactMarkdown from "react-markdown"; // Import react-markdown
+import polymarkdown from './polymarkdown.md?raw'; 
+
 const PolygonNdvi = () => {
   const [map, setMap] = useState(null);
   const [ridamLayer, setRidamLayer] = useState(null);
@@ -206,6 +209,9 @@ const PolygonNdvi = () => {
       </div>
 
       <div id="map" className="map"></div>
+      <div className="markdown-content">
+                    <ReactMarkdown>{polymarkdown}</ReactMarkdown>
+                  </div>
 
       <div id="myModal" className="my-modal">
         <span className="close-button" onClick={closeModal}>
